@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style.css" >
+    <title>Equilibrio</title>
+</head>
+
+<body>
+
+  
+
+    <form name="form_costs" class="form_costs"  id="form_costs" >
+        <fieldset id="fixed_costs_container" class="costs_fieldset">
+            <legend>Costos Fijos</legend>
+            <input required min="0" name="arriendo" type="number"  placeholder="Ingrese el costo del arriendo" />
+            <input required min="0" name="nomina" type="number"  placeholder="Ingrese su costo de nomina" />
+            <input required min="0" name="impuestos" type="number"  placeholder="Cuanto paga de impuestos" />
+            <button onclick="addCost('fixed_costs_container')" id="add_fixed_cost">Agregar costo fijo</button>
+        </fieldset>
+
+        <fieldset id="variable_costs_container" class="costs_fieldset">
+            <legend>Costos Variables</legend>
+            <input required min="0" name="agua" type="number"  placeholder="Ingrese el costo del recibo del agua" />
+            <input required min="0" name="gas" type="number"  placeholder="Ingrese el costo del gas" />
+            <input required min="0" name="luz" type="number" placeholder="Ingrese el costo del recibo de la luz" />
+            <button onclick="addCost('variable_costs_container')" id="add_variable_cost">Agregar costo variable</button>
+        </fieldset>
+
+
+        <button type="submit" onclick="submitFormCosts()" class="btn_form_costs">Calcular</button>
+    </form>
+    
+
+    <script type="text/javascript" src="functions/menu.js"></script>
+    <script type="text/javascript" src="functions/validations.js"></script>
+
+</body>
+
+</html>

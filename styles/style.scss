@@ -1,0 +1,59 @@
+@import 'variables';
+
+body { 
+    background-color: whitesmoke;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+}
+
+.section_vector{
+    background-image: url(../assets/vector.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-end-end-radius: 30px;
+    min-height: 30vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form_costs{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.costs_fieldset{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    padding: 2%;
+
+    input{
+        margin: 1%;
+        padding: 0.7%;
+        width: 80%;
+    }
+
+    button{
+        width: max-content;
+        padding: 0.7%;
+        cursor: pointer;
+    }
+
+}
+
+.btn_form_costs{
+    margin-top: 1%;
+    padding:1%;
+    width: 30%;
+    font-weight: 600;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
