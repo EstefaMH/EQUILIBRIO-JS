@@ -11,32 +11,29 @@ function addCost(id) {
         if(newCostName == ""){
             alert("Completa la información");
         }
-
         
-    } while ( newCostName == "" );
-    
+    } while ( newCostName == ""  );
 
-
-    const addLabel = document.createElement("label");
-    addLabel.innerText = newCostName;
-
-    const container = document.getElementById(id);
-    let inputClass = container.className;
-    console.log(inputClass)
-
-    const addInput = document.createElement("input");
-    addInput.setAttribute("type", "number");
-   
-    addInput.setAttribute("name", newCostName);
-    addInput.setAttribute("required", true);
-
-    addLabel.appendChild(addInput);
-
-   
-    container.insertAdjacentElement("afterbegin", addInput);
-
-    
-
+    if(newCostName!=null){
+        const addLabel = document.createElement("label");
+            addLabel.innerText = newCostName;
+        
+            const container = document.getElementById(id);
+            let inputClass = container.className;
+            console.log(inputClass)
+        
+            const addInput = document.createElement("input");
+            addInput.setAttribute("type", "number");
+           
+            addInput.setAttribute("name", newCostName);
+            addInput.setAttribute("required", true);
+        
+            addLabel.appendChild(addInput);
+        
+           
+            container.insertAdjacentElement("afterbegin", addInput);
+    }
+     
 }
 
 function submitFormCosts() {
