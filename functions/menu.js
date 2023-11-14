@@ -2,9 +2,20 @@ myList = new Array();
 
 function addCost(id) {
 
+    let newCostName;
+    do {
+        newCostName = prompt("Nombre del costo : ")
+
+        console.log(newCostName);
+    
+        if(newCostName == ""){
+            alert("Completa la información");
+        }
+
+        
+    } while ( newCostName == "" );
     
 
-    let newCostName = prompt("Nombre del costo : ")
 
     const addLabel = document.createElement("label");
     addLabel.innerText = newCostName;
