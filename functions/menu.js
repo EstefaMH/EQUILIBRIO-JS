@@ -2,6 +2,8 @@ myList = new Array();
 
 function addCost(id) {
 
+    
+
     let newCostName = prompt("Nombre del costo : ")
 
     const addLabel = document.createElement("label");

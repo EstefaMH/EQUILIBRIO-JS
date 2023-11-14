@@ -10,9 +10,7 @@
 
 <body>
 
-  
-
-    <form name="form_costs" class="form_costs"  id="form_costs" >
+    <form name="form_costs" class="form_costs"  id="form_costs" onsubmit="submitFormCosts()" >
         <fieldset id="fixed_costs_container" class="costs_fieldset">
             <legend>Costos Fijos</legend>
             <input required min="0" name="arriendo" type="number"  placeholder="Ingrese el costo del arriendo" />
@@ -30,7 +28,7 @@
         </fieldset>
 
 
-        <button type="submit" onclick="submitFormCosts()" class="btn_form_costs">Calcular</button>
+        <button type="submit"  class="btn_form_costs">Calcular</button>
     </form>
     
 
