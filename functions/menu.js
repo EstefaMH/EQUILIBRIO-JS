@@ -7,79 +7,90 @@ function addCost(id) {
         newCostName = prompt("Nombre del costo : ")
 
         console.log(newCostName);
-    
-        if(newCostName == ""){
+
+        if (newCostName == "") {
             alert("Completa la información");
         }
-        
-    } while ( newCostName == ""  );
 
-    if(newCostName!=null){
+    } while (newCostName == "");
+
+    if (newCostName != null) {
         const addLabel = document.createElement("label");
-            addLabel.innerText = newCostName;
-        
-            const container = document.getElementById(id);
-            let inputClass = container.className;
-            console.log(inputClass)
-        
-            const addInput = document.createElement("input");
-            addInput.setAttribute("type", "number");
-           
-            addInput.setAttribute("name", newCostName);
-            addInput.setAttribute("required", true);
-        
-            addLabel.appendChild(addInput);
-        
-           
-            container.insertAdjacentElement("afterbegin", addInput);
+        addLabel.innerText = newCostName;
+
+        const container = document.getElementById(id);
+        let inputClass = container.className;
+        console.log(inputClass)
+
+        const addInput = document.createElement("input");
+        addInput.setAttribute("type", "number");
+
+        addInput.setAttribute("name", newCostName);
+        addInput.setAttribute("required", true);
+
+        addLabel.appendChild(addInput);
+
+
+        container.insertAdjacentElement("afterbegin", addInput);
     }
-     
+
 }
 
 function submitFormCosts() {
 
+    let cost = new Costs();
+
     let form = new FormData(form_costs)
 
-    const jsonData = {}; 
+    const jsonData = {};
 
-    form.forEach((value, key) => { 
+    form.forEach((value, key) => {
         jsonData[key] = value;
-        myList.push({"name":key,"value":value})
+
+        myList.push({ "type": cost.name = "tipo", "name": cost.name = key, "value": cost.value = value })
+        console.log(myList);
     });
 
-    calculate_costs();
-    
+    let totalCosts = calculateCosts();
+    let getUnitaryCostPrice = unitaryCostPrice(totalCosts, 10);
+    let getUnitarySalesPrice = unitarySalesPrice(totalCosts, 10, 100);
+
+    alert("\nsus costos totales son : " + totalCosts + "\nel costo unitario es : " + getUnitaryCostPrice + "\nel precio de venta es : " + getUnitarySalesPrice);
     return jsonData;
 }
 
 
-function calculate_costs() {
-    
+function calculateCosts() {
+
     let SUM_COSTS = 0;
 
     for (var i = 0; i < myList.length; i++) {
-        SUM_COSTS = SUM_COSTS + parseInt(myList[i].value) ;
+        console.log(myList[i]);
+        SUM_COSTS = SUM_COSTS + parseInt(myList[i].value);
     }
-
-    alert(SUM_COSTS)
     return SUM_COSTS;
 }
 
-function menubar() {
-
-    var opt = document.getElementById("opt_select").value;
-
-    switch (opt) {
-        case "1":
-
-            break;
-
-        case "2":
-
-            break;
-
-        default:
-            break;
-    };
+function unitaryCostPrice(totalCosts, units = 10) {
+    return totalCosts / units;
 }
 
+
+function unitarySalesPrice(totalCosts, units, profitMargin) {
+    return ((totalCosts * (profitMargin / 100)) + totalCosts) / units;
+}
+
+/**
+ * 
+ * @param {*} fixedCosts 
+ * @param {*} variableCosts 
+ * @param {*} units 
+ * @returns 
+ */
+
+function calculate_balance_money(fixedCosts, variableCosts, units) {
+
+    let balance = fixedCosts / (variableCosts / units) - 1;
+
+    return balance;
+}

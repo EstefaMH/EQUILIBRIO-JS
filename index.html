@@ -27,13 +27,24 @@
             <button onclick="addCost('variable_costs_container')" id="add_variable_cost">Agregar costo variable</button>
         </fieldset>
 
+        <fieldset id="" class="costs_fieldset">
+            <legend>Margen de ganancia</legend>
+            <input required min="0" name="agua" type="number"  placeholder="Ingrese su margen de ganancia" />
+        </fieldset>
+
+        <input id="range" type="range" value="0" step="1" min="0" max="10000" onchange="getRange()"/>
+        <label>Value: <span id="value_range" >0</span></label>
+
+
 
         <button type="submit"  class="btn_form_costs">Calcular</button>
     </form>
     
-
     <script type="text/javascript" src="functions/menu.js"></script>
-  
+    <script type="text/javascript" src="models/costs.js"></script>
+    <script type="text/javascript" src="functions/balance.js"></script>
+   
+    
 
 </body>
 
